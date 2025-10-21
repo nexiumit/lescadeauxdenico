@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produit - Les Cadeaux de Nico</title>
+  <meta name="description" content="Découvrez nos produits personnalisés.">
+  <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+  <!-- ✅ CORRIGÉ : styles.css → style.css -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const slug = urlParams.get('slug');
+      if (slug) {
+        const res = await fetch('data/products.json');
+        const products = await res.json();
+        const product = products.find(p => p.slug === slug);
+        if (product) {
+          document.title = `${product.title} - Les Cadeaux de Nico`;
+          document.querySelector('meta[name="description"]').setAttribute('content', product.shortDescription);
+        }
+      }
+    });
+  </script>
+  
+</head>
+<body>
+  <div id="header-container"></div>
+  <main class="container">
+    <div id="product-container"></div>
+  </main>
+  <div id="footer-container"></div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="assets/js/includeTemplates.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

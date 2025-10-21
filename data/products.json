@@ -1,0 +1,409 @@
+[
+  {
+    "slug": "bloc-note",
+    "title": "Bloc-notes personnalisé",
+    "shortDescription": "Ensemble comprenant un bloc-notes en bambou avec feuilles lisses à l'intérieur et un stylo assorti en bambou. Son double élastique maintient le bloc-notes fermé et maintient le stylo en toute sécurité.",
+    "description": "Bloc-notes en bambou avec feuilles lisses, accompagné d'un stylo assorti. Personnalisable par gravure ou impression. Idéal pour usage professionnel ou cadeau.",
+    "price": "À partir de 9€",
+    "materials": ["Bambou"],
+    "dimensions": "9.00 x 14.00 x 1.10 cm",
+    "images": [
+      "assets/img/products/bloc-note-01.webp",
+      "assets/img/products/bloc-note-02.webp",
+      "assets/img/products/bloc-note-03.webp",
+      "assets/img/products/bloc-note-04.webp"
+    ],
+    "category": "Papeterie",
+    "customizationOptions": ["Impression logo", "Gravure nom"],
+    "isBestseller": false
+  },
+  {
+    "slug": "bonnet",
+    "title": "Bonnet personnalisé",
+    "shortDescription": "Bonnet confortable en 100% polyester, idéal pour garder la tête au chaud.",    
+    "description": "Bonnet chaud et confortable, disponible en plusieurs coloris. Possibilité de broder un logo ou un texte personnalisé pour un look unique.",
+    "price": "À partir de 15€",
+    "materials": ["100% Polyester"],
+    "dimensions": "18.00 x 27.00 x 0.00 cm",
+    "images": [
+      "assets/img/products/bonnet-01.webp",
+      "assets/img/products/bonnet-02.webp",
+      "assets/img/products/bonnet-03.webp",
+      "assets/img/products/bonnet-04.webp"
+    ],
+    "category": "Accessoires mode",
+    "customizationOptions": ["Broderie logo", "Texte personnalisé"],
+    "isBestseller": false
+  },
+  {
+    "slug": "casquette",
+    "title": "Casquette personnalisée",
+    "shortDescription": "Casquette inspirée des jeux de baseball américains, respirante et réglable.",
+    "description": "Notre casquette RETRO AMERICAN s'inspire des jeux de baseball américains. Le dos présente un design en maille pour le rendre plus respirant et frais, avec une fermeture en plastique réglable. Composée de 5 panneaux, le devant et la visière sont de couleur unie. Disponible en 5 coloris : Blanc, Noir, Bordeaux, Vert et Marine.",
+    "price": "À partir de 10€",
+    "materials": ["100% Polyester"],
+    "dimensions": "59.00 x 0.00 x 0.00 cm",
+    "images": [
+      "assets/img/products/casquette-01.webp",
+      "assets/img/products/casquette-02.webp",
+      "assets/img/products/casquette-03.webp",
+      "assets/img/products/casquette-04.webp",
+      "assets/img/products/casquette-05.webp",
+      "assets/img/products/casquette-06.webp",
+      "assets/img/products/casquette-07.webp",
+      "assets/img/products/casquette-08.webp",
+      "assets/img/products/casquette-09.webp"
+    ],
+    "category": "Accessoires mode",
+    "customizationOptions": ["Broderie logo", "Impression couleur"],
+    "isBestseller": true
+  },
+  {
+    "slug": "chapeau-paille",
+    "title": "Chapeau de paille personnalisé",
+    "shortDescription": "Fabriqué en feuille de palmier tressée, avec ruban intérieur et possibilité de personnalisation du ruban extérieur",
+    "description": "Fabriqué en feuille de palmier tressée. Comprend un ruban intérieur (pas extérieur). Complétez-le avec un ruban extérieur personnalisé. Mesure du ruban en polyester 45 x 3,2 cm. Mesure du ruban non tissé 45 x 3,2 cm.",
+    "price": "À partir de 3.5€",
+    "materials": ["Feuille de palme"],
+    "dimensions": "33.00 x 35.00 x 11.00 cm",
+    "images": [
+      "assets/img/products/chapeau-paille-01.webp",
+      "assets/img/products/chapeau-paille-02.webp"
+    ],
+    "category": "Accessoires mode",
+    "customizationOptions": ["Ruban extérieur personnalisé", "Gravure ou impression"],
+    "isBestseller": false
+  },
+  {
+    "slug": "couteau-champignon",
+    "title": "Couteau à champignon personnalisé",
+    "shortDescription": "Nouveau couteau en bois naturel et acier inoxydable.",
+    "description": "Couteau à champignon en bois naturel et acier inoxydable. Idéal pour la cueillette ou comme cadeau.",
+    "price": "À partir de 14€",
+    "materials": ["Bois", "Acier inoxydable"],
+    "dimensions": "11.00 x 4.00 x 0.00 cm",
+    "images": [
+      "assets/img/products/couteau-champignon-01.webp",
+      "assets/img/products/couteau-champignon-02.webp",
+      "assets/img/products/couteau-champignon-03.webp",
+      "assets/img/products/couteau-champignon-04.webp",
+      "assets/img/products/couteau-champignon-05.webp"
+    ],
+    "category": "Coutellerie",
+    "customizationOptions": ["Gravure nom", "Logo"],
+    "isBestseller": false
+  }
+,
+  {
+    "slug": "couteau-suisse",
+    "title": "Couteau Suisse personnalisé",
+    "shortDescription": "7 fonctions : couteau, ciseaux, deux ouvre-bouteilles, lime, tire-bouchon et tournevis. Chaque pièce présentée dans un sachet individuel et une boîte en carton.",
+    "description": "Couteau Suisse multifonction avec 7 outils : couteau, ciseaux, deux ouvre-bouteilles, lime, tire-bouchon et tournevis. Présenté dans un sachet individuel et une boîte en carton. Idéal pour usage quotidien ou cadeau. Dimensions boîte : 2,7 x 9,2 x 1,8 cm.",
+    "price": "À partir de 16€",
+    "materials": ["Bambou", "Acier inoxydable"],
+    "dimensions": "9.40 x 2.50 x 1.50 cm",
+    "images": [
+      "assets/img/products/couteau-suisse-01.webp",
+      "assets/img/products/couteau-suisse-02.webp",
+      "assets/img/products/couteau-suisse-03.webp",
+      "assets/img/products/couteau-suisse-04.webp"
+    ],
+    "category": "Coutellerie",
+    "customizationOptions": ["Gravure nom", "Logo"],
+    "isBestseller": false
+  }
+,
+  {
+    "slug": "decapsuleur-magnet",
+    "title": "Décapsuleur magnet personnalisé",
+    "shortDescription": "Ouvre-boîte en bambou avec intérieur en métal magnétique",
+    "description": "Décapsuleur en bambou avec intérieur en métal magnétique, présenté dans un sachet individuel. Personnalisable par gravure ou impression.",
+    "price": "À partir de 6€",
+    "materials": ["Bambou", "Métal"],
+    "dimensions": "6.00 x 1.00 x 0.00 cm",
+    "images": [
+      "assets/img/products/decapsuleur-magnet-01.webp",
+      "assets/img/products/decapsuleur-magnet-02.webp",
+      "assets/img/products/decapsuleur-magnet-03.webp",
+      "assets/img/products/decapsuleur-magnet-04.webp",
+      "assets/img/products/decapsuleur-magnet-05.webp"
+    ],
+    "category": "Accessoires",
+    "customizationOptions": ["Gravure nom", "Logo", "Impression couleur"],
+    "isBestseller": false
+  },
+  {
+    "slug": "decapsuleur-poignee",
+    "title": "Décapsuleur poignée personnalisée",
+    "shortDescription": "Chaque pièce dans un sachet individuel.",
+    "description": "Décapsuleur avec manche en bois, présenté dans un sachet individuel. Personnalisable par gravure ou impression. Parfait pour cadeaux originaux.",
+    "price": "À partir de 8€",
+    "materials": ["Bois"],
+    "dimensions": "4.00 x 14.50 x 2.20 cm",
+    "images": [
+      "assets/img/products/decapsuleur-poignee-01.webp",
+      "assets/img/products/decapsuleur-poignee-02.webp",
+      "assets/img/products/decapsuleur-poignee-03.webp",
+      "assets/img/products/decapsuleur-poignee-04.webp"
+    ],
+    "category": "Accessoires",
+    "customizationOptions": ["Gravure nom", "Logo"],
+    "isBestseller": false
+  },
+  {
+    "slug": "decapsuleur-porte-cle",
+    "title": "Décapsuleur porte-clés personnalisé",
+    "shortDescription": "Décapsuleur Porte-clés en aluminium résistant avec finition mate, ergonomique et double fonction ouvre-canette et ouvre-bouteille.",
+    "description": "Décapsuleur Porte-clés fabriqué en aluminium avec finition mate, disponible en plusieurs couleurs vives. Conception ergonomique confortable avec double fonction : ouvre-canette et ouvre-bouteille. Pratique à garder toujours à portée de main.",
+    "price": "À partir de 2€",
+    "materials": ["Aluminium"],
+    "dimensions": "6.00 x 1.10 x 1.50 cm",
+    "images": [
+      "assets/img/products/decapsuleur-porte-cle-01.webp",
+      "assets/img/products/decapsuleur-porte-cle-02.webp",
+      "assets/img/products/decapsuleur-porte-cle-03.webp",
+      "assets/img/products/decapsuleur-porte-cle-04.webp",
+      "assets/img/products/decapsuleur-porte-cle-05.webp",
+      "assets/img/products/decapsuleur-porte-cle-06.webp",
+      "assets/img/products/decapsuleur-porte-cle-07.webp",
+      "assets/img/products/decapsuleur-porte-cle-08.webp",
+      "assets/img/products/decapsuleur-porte-cle-09.webp",
+      "assets/img/products/decapsuleur-porte-cle-10.webp",
+      "assets/img/products/decapsuleur-porte-cle-11.webp"
+    ],
+    "category": "Accessoires",
+    "customizationOptions": ["Gravure nom", "Logo", "Impression couleur"],
+    "isBestseller": false
+  },
+  {
+    "slug": "gourde-isotherme",
+    "title": "Gourde isotherme personnalisée",
+    "shortDescription": "Bouteille spéciale pour sublimation d'une capacité de 700 ml, finition mate, présentée dans une boîte individuelle.",
+    "description": "Bouteille isotherme en acier inoxydable, conçue pour la sublimation. Capacité : 700 ml. Finition mate. Technique de marquage : SUB1, SUB2.",
+    "price": "À partir de 12€",
+    "materials": ["Acier inoxydable"],
+    "dimensions": "25.70 x 7.50 x 0.00 cm",
+    "images": [
+      "assets/img/products/gourde-isotherme-01.webp",
+      "assets/img/products/gourde-isotherme-02.webp",
+      "assets/img/products/gourde-isotherme-03.webp",
+      "assets/img/products/gourde-isotherme-04.webp",
+      "assets/img/products/gourde-isotherme-05.webp",
+      "assets/img/products/gourde-isotherme-06.webp"
+    ],
+    "category": "Sport et boisson",
+    "customizationOptions": ["Gravure logo", "Impression couleur"],
+    "isBestseller": true
+  },
+  {
+    "slug": "magnet-bambou",
+    "title": "Magnet en bambou personnalisé",
+    "shortDescription": "Magnet écologique en bambou gravé",
+    "description": "Magnet en bambou naturel avec surface personnalisable par gravure laser. Un support écologique et original pour votre communication.",
+    "price": "À partir de 6€",
+    "materials": ["Bambou"],
+    "dimensions": "8.00 x 5.50 x 0.40 cm",
+    "images": [
+      "assets/img/products/magnet-bambou-01.webp",
+      "assets/img/products/magnet-bambou-02.webp",
+      "assets/img/products/magnet-bambou-03.webp"
+    ],
+    "category": "Décoration",
+    "customizationOptions": ["Gravure logo"],
+    "isBestseller": false
+  },
+  {
+    "slug": "mug",
+    "title": "Mug personnalisé",
+    "shortDescription": "Couleur blanche. Présentation par boîte individuelle. Tasse avec capacité de 350 ml. Vendu par multiple de 36 unités.",
+    "description": "Mug en céramique blanche de haute qualité, capacité 350 ml. Idéal pour personnalisation par gravure ou impression.",
+    "price": "À partir de 12€",
+    "materials": ["Céramique"],
+    "dimensions": "8.30 x 9.70 x 0.00 cm",
+    "images": [
+      "assets/img/products/mug-01.webp",
+      "assets/img/products/mug-02.webp"
+    ],
+    "category": "Mugs",
+    "customizationOptions": ["Impression photo", "Gravure texte"],
+    "isBestseller": true
+  },
+  {
+    "slug": "planche-a-decouper",
+    "title": "Planche à découper personnalisée",
+    "shortDescription": "Planche à découper en bois gravée",
+    "description": "Planche à découper en bambou, idéale pour la cuisine ou en plateau de présentation. Personnalisable par gravure laser.",
+    "price": "À partir de 22€",
+    "materials": ["Bambou"],
+    "dimensions": "14.50 x 20.50 x 1.20 cm",
+    "images": [
+      "assets/img/products/planche-a-decouper-01.webp",
+      "assets/img/products/planche-a-decouper-02.webp",
+      "assets/img/products/planche-a-decouper-03.webp",
+      "assets/img/products/planche-a-decouper-04.webp"
+    ],
+    "category": "Cuisine",
+    "customizationOptions": ["Gravure ou impression"],
+    "isBestseller": true
+  },
+  {
+    "slug": "roulette-a-pizza",
+    "title": "Roulette à pizza personnalisée",
+    "shortDescription": "Roulette à pizza en acier inoxydable avec manche bois gravé",
+    "description": "Ustensile de cuisine pratique et design, avec manche personnalisable par gravure. Lame inox de qualité professionnelle.",
+    "price": "À partir de 13€",
+    "materials": ["Acier inoxydable", "Bois"],
+    "dimensions": "8.50 x 7.50 x 1.10 cm",
+    "images": [
+      "assets/img/products/roulette-a-pizza-01.webp",
+      "assets/img/products/roulette-a-pizza-02.webp"
+    ],
+    "category": "Cuisine",
+    "customizationOptions": ["Gravure ou impression"],
+    "isBestseller": false
+  },
+  {
+    "slug": "set-de-vin",
+    "title": "Set de Vin",
+    "shortDescription": "Set comprenant un ouvre-bouteille, un anneau anti-goutte et un bouchon, présenté dans un écrin en bambou",
+    "description": "Comprend un ouvre-bouteille, un anneau anti-goutte et un bouchon. Présenté dans un écrin en bambou. Dimensions : 16.20 x 10.40 x 5.00 cm. Technique de marquage : E, LCO2.",
+    "price": "À partir de 8€",
+    "materials": ["Bambou", "Métal pour l’ouvre-bouteille et anneau"],
+    "dimensions": "16.20 x 10.40 x 5.00 cm",
+    "images": [
+      "assets/img/products/set-de-vin-01.webp",
+      "assets/img/products/set-de-vin-02.webp",
+      "assets/img/products/set-de-vin-03.webp"
+    ],
+    "category": "Accessoires Vin",
+    "customizationOptions": ["Gravure sur bambou ou métal"],
+    "isBestseller": false
+  },
+  {
+    "slug": "stylo",
+    "title": "Stylo personnalisé",
+    "shortDescription": "Stylo à bille original et élégant en bambou avec corps en bambou et appliques en métal chromé",
+    "description": "Stylo à bille de la collection Bambú avec charge jumbo et encre bleue, clic automatique. Fabriqué avec un corps en bambou et appliques en métal chromé. Présenté dans un sachet individuel. Large gamme de stylos et crayons ECO en bambou.",
+    "price": "À partir de 2.5€",
+    "materials": ["Bambou", "ABS", "Métal"],
+    "dimensions": "14.00 x 0.00 x 0.00 cm",
+    "images": [
+      "assets/img/products/stylo-01.webp",
+      "assets/img/products/stylo-02.webp",
+      "assets/img/products/stylo-03.webp",
+      "assets/img/products/stylo-03.jpg.webp"
+    ],
+    "category": "Papeterie",
+    "customizationOptions": ["Gravure nom", "Logo", "Impression couleur"],
+    "isBestseller": true
+  },
+  {
+    "slug": "stylo-stylet",
+    "title": "Stylo stylet personnalisé",
+    "shortDescription": "Stylo en bambou avec finitions métalliques et pointeur tactile multicolore, encre bleue",
+    "description": "Fabriqué en bambou avec des finitions métalliques, il comprend un pointeur tactile de différentes couleurs. Écriture bleue. Présenté dans un sachet individuel.",
+    "price": "À partir de 2.8€",
+    "materials": ["Bambou", "ABS"],
+    "dimensions": "14.20 x 0.00 x 0.00 cm",
+    "images": [
+      "assets/img/products/stylo-stylet-01.webp",
+      "assets/img/products/stylo-stylet-02.webp",
+      "assets/img/products/stylo-stylet-03.webp",
+      "assets/img/products/stylo-stylet-04.webp",
+      "assets/img/products/stylo-stylet-05.webp"
+    ],
+    "category": "Papeterie",
+    "customizationOptions": ["Gravure nom", "Logo", "Impression couleur"],
+    "isBestseller": false
+  },
+  {
+    "slug": "tapis-souris",
+    "title": "Tapis de souris personnalisé",
+    "shortDescription": "Tapis de souris en caoutchouc et polyester, idéal pour personnalisation.",
+    "description": "Tapis de souris fabriqué en caoutchouc et polyester, dimensions 22 x 18 cm. Idéal pour l'impression ou le marquage promotionnel.",
+    "price": "À partir de 5€",
+    "materials": ["Caoutchouc", "Polyester"],
+    "dimensions": "22.00 x 18.00 x 0.00 cm",
+    "images": [
+      "assets/img/products/tapis-souris-01.webp",
+      "assets/img/products/tapis-souris-02.webp",
+      "assets/img/products/tapis-souris-03.webp",
+      "assets/img/products/tapis-souris-04.webp",
+      "assets/img/products/tapis-souris-05.webp",
+      "assets/img/products/tapis-souris-06.webp",
+      "assets/img/products/tapis-souris-07.webp",
+      "assets/img/products/tapis-souris-08.webp",
+      "assets/img/products/tapis-souris-09.webp"
+    ],
+    "category": "Bureautique",
+    "customizationOptions": ["Impression couleur", "Logo entreprise"],
+    "isBestseller": false
+  },
+  {
+    "slug": "tote-bag",
+    "title": "Sac de sublimation \"Estella\"",
+    "shortDescription": "Sac à longues anses en polyester, idéal pour la sublimation.",
+    "description": "Sac à longues anses fabriqué en polyester, idéal pour l’impression par sublimation. Matière : 101 % polyester 150 g.",
+    "price": "À partir de 12€",
+    "materials": ["100 % polyester 150 g"],
+    "dimensions": "38.00 x 42.00 x 0.00 cm",
+    "images": [
+      "assets/img/products/tote-bag-01.webp"
+    ],
+    "category": "Sacs",
+    "customizationOptions": ["Impression couleur", "Broderie logo"],
+    "isBestseller": true
+  },
+  {
+    "slug": "bouchons-bouteille-vin",
+    "title": "Bouchons de bouteille de vin personnalisés",
+    "shortDescription": "Bouchons de bouteille personnalisables par gravure",
+    "description": "Bouchons de bouteille en bois et caoutchouc, personnalisables par gravure pour un cadeau élégant ou une promotion d’entreprise.",
+    "price": "À partir de 10€",
+    "materials": ["Bois", "Caoutchouc"],
+    "dimensions": "Hauteur 1 cm",
+    "images": [
+      "assets/img/products/bouchons-bouteille-vin-01.webp",
+      "assets/img/products/bouchons-bouteille-vin-02.webp",
+      "assets/img/products/bouchons-bouteille-vin-03.webp",
+      "assets/img/products/bouchons-bouteille-vin-04.webp"
+    ],
+    "category": "Accessoires",
+    "customizationOptions": ["Gravure nom", "Logo"],
+    "isBestseller": false
+  },
+  {
+    "slug": "decapsuleur-bois-rectangulaire",
+    "title": "Décapsuleur bois rectangulaire personnalisé",
+    "shortDescription": "Décapsuleur en bois rectangulaire gravé",
+    "description": "Décapsuleur robuste avec manche en bois rectangulaire, personnalisable par gravure. Idéal pour cadeaux ou événements promotionnels.",
+    "price": "À partir de 8€",
+    "materials": ["Bois", "Acier inoxydable"],
+    "dimensions": "10 x 4 cm",
+    "images": [
+      "assets/img/products/decapsuleur-bois-rectangulaire-01.webp",
+      "assets/img/products/decapsuleur-bois-rectangulaire-02.webp",
+      "assets/img/products/decapsuleur-bois-rectangulaire-03.webp"
+    ],
+    "category": "Accessoires",
+    "customizationOptions": ["Gravure nom", "Logo"],
+    "isBestseller": false
+  },
+  {
+    "slug": "magnet",
+    "title": "Magnet personnalisé",
+    "shortDescription": "Magnet personnalisable par impression ou gravure",
+    "description": "Magnet polyvalent pour réfrigérateur ou surfaces métalliques, personnalisable avec logo ou visuel. Idéal pour la promotion ou la décoration.",
+    "price": "À partir de 6€",
+    "materials": ["Plastique", "Aimant néodyme"],
+    "dimensions": "7,5 x 5,5 cm",
+    "images": [
+      "assets/img/products/magnet-01.webp",
+      "assets/img/products/magnet-02.webp",
+      "assets/img/products/magnet-03.webp"
+    ],
+    "category": "Décoration",
+    "customizationOptions": ["Impression couleur", "Gravure logo"],
+    "isBestseller": false
+  }
+]

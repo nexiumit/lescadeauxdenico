@@ -1,0 +1,183 @@
+/* === VARIABLES CSS + OVERRIDE BOOTSTRAP BLEU === */
+:root {
+  /* THÈME PRINCIPAL */
+  --primary-gray-dark: #3D3D3D;
+  --accent-red-orange: #E26155;
+  --white: #FFFFFF;
+  --bg-light: #F9F9F9;
+  --bg-white: #FFFFFF;
+  --text-primary: var(--primary-gray-dark);
+  --text-secondary: #666666;
+  --accent-hover: #D54F45;
+  --shadow-subtle: 0 4px 12px rgba(226, 97, 85, 0.15);
+  --border-light: #E5E5E5;
+  --theme-color: var(--accent-red-orange);
+  --bg-primary: var(--bg-light);
+
+  /* ✅ OVERRIDE BOOTSTRAP - SUPPRESSION DU BLEU (FORCÉ) */
+  --bs-primary: var(--accent-red-orange) !important;
+  --bs-primary-rgb: 226, 97, 85 !important;
+  --bs-link-color: var(--accent-red-orange) !important;
+  --bs-link-hover-color: var(--accent-hover) !important;
+  --bs-btn-focus-box-shadow: 0 0 0 0.25rem rgba(226, 97, 85, 0.25) !important;
+  --bs-form-focus-box-shadow: 0 0 0 0.25rem rgba(226, 97, 85, 0.25) !important;
+}
+
+/* === OVERRIDE URGENT ET RENFORCÉ - HAUTE PRIORITÉ === */
+.text-primary,
+.text-primary *,
+.text-primary i,
+.text-primary [class*="fa-"],
+[class*="text-primary"] {
+    color: var(--accent-red-orange) !important;
+    --bs-text-opacity: 1 !important;
+}
+
+.link-primary,
+.link-primary:hover {
+    color: var(--accent-red-orange) !important;
+}
+
+/* === BOUTONS - COHÉRENCE AVEC "CONTACTEZ-NOUS" ET ACCESSIBILITÉ === */
+/* Tous les boutons alignés sur .btn-outline-light : contour clair, texte blanc, fond transparent ou contrasté */
+.btn,
+.btn-primary,
+.btn-outline-primary,
+.btn-outline-light,
+.btn-lg,
+.btn-sm,
+[class*="btn-"] {
+    border: 2px solid var(--white) !important; /* Contour blanc comme "Contactez-nous" */
+    color: var(--white) !important; /* Texte blanc pour visibilité maximale */
+    background: transparent !important; /* Transparent par défaut */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important; /* Améliore lisibilité sur fonds sombres */
+    transition: all 0.3s ease !important;
+    font-weight: 600 !important;
+    border-radius: 0.5rem !important;
+    padding: 0.75rem 1.5rem !important;
+}
+
+/* Sur fonds clairs (comme catalogue), fond plein pour contraste */
+.section-light .btn,
+.section-white .btn,
+.container .btn,
+main .btn,
+body .btn:not(.section-accent .btn) {
+    background: linear-gradient(135deg, var(--accent-red-orange), var(--accent-hover)) !important; /* Fond rouge-orange sur clair */
+    border-color: var(--accent-red-orange) !important; /* Contour assorti */
+    color: var(--white) !important; /* Texte blanc */
+}
+
+/* Hover pour tous les boutons (comme "Contactez-nous") */
+.btn:hover,
+.btn-primary:hover,
+.btn-outline-primary:hover,
+.btn-outline-light:hover {
+    background: linear-gradient(135deg, var(--accent-hover), var(--accent-red-orange)) !important;
+    border-color: var(--white) !important;
+    color: var(--white) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(226, 97, 85, 0.3) !important;
+}
+
+/* Focus pour accessibilité (halo visible) */
+.btn:focus,
+.btn-primary:focus,
+.btn-outline-primary:focus,
+.btn-outline-light:focus {
+    box-shadow: 0 0 0 0.25rem rgba(226, 97, 85, 0.5) !important;
+    border-color: var(--white) !important;
+}
+
+/* Boutons spécifiques (filtres catalogue, "voir le produit") */
+#filter-container .btn,
+#product-grid .btn,
+.btn-filter, /* Si classe personnalisée pour filtres */
+.btn-view-product { /* Si classe pour "voir le produit" */
+    background: linear-gradient(135deg, var(--accent-red-orange), var(--accent-hover)) !important;
+    color: var(--white) !important; /* Texte blanc pour visibilité */
+    border-color: var(--accent-red-orange) !important;
+}
+
+/* === ICÔNES DANS BOUTONS === */
+.btn i,
+.btn-primary i,
+.btn-outline-primary i,
+.btn-outline-light i {
+    color: var(--white) !important; /* Icônes blanches pour visibilité */
+    transition: transform 0.3s ease !important;
+}
+
+.btn:hover i {
+    transform: scale(1.1) !important;
+}
+
+/* === FORMULAIRES - SUPPRIMER LE BLEU COMPLÈTEMENT === */
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--accent-red-orange) !important;
+    box-shadow: 0 0 0 0.25rem rgba(226, 97, 85, 0.25) !important;
+    outline: none;
+}
+
+.btn-primary:focus {
+    box-shadow: 0 0 0 0.25rem rgba(226, 97, 85, 0.25) !important;
+}
+
+/* === VALIDATION BOOTSTRAP === */
+.was-validated .form-control:valid {
+    border-color: #28a745;
+    box-shadow: 0 0 0 0.25rem rgba(40, 167, 69, 0.25);
+}
+
+.was-validated .form-control:invalid {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
+}
+
+/* === ALERTS ET BADGES === */
+.alert-primary {
+    --bs-alert-color: #8b2d21;
+    --bs-alert-bg: #f8d7da;
+    --bs-alert-border-color: #f5c2c7;
+}
+
+.badge-primary {
+    background-color: var(--accent-red-orange) !important;
+    color: var(--white) !important;
+}
+
+/* === BASE ET TYPOGRAPHIE === */
+html {
+    background-color: var(--bg-primary);
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-primary);
+    line-height: 1.6;
+    margin: 0;
+    min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+
+/* === UTILITAIRES === */
+.text-accent { color: var(--accent-red-orange); }
+.bg-accent { background-color: var(--accent-red-orange); color: var(--white); }
+.border-accent { border-color: var(--accent-red-orange); }
+#cart-count { font-size: 0.7rem; }
+
+/* Sections utilitaires */
+.section-light { background-color: var(--bg-light); }
+.section-white { background-color: var(--white); }

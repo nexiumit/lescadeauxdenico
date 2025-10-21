@@ -1,0 +1,33 @@
+/* === FORMULAIRES GÉNÉRAUX === */
+input, textarea, select {
+  border: 2px solid var(--border-light);
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--accent-red-orange) !important; /* ✅ Plus de bleu */
+  box-shadow: 0 0 0 3px rgba(226, 97, 85, 0.1) !important;
+}
+
+/* === CHECKBOX ET RADIO === */
+.form-check-input:checked {
+    background-color: var(--accent-red-orange);
+    border-color: var(--accent-red-orange);
+}
+
+.form-check-input:focus {
+    border-color: var(--accent-red-orange);
+    box-shadow: 0 0 0 0.25rem rgba(226, 97, 85, 0.25);
+}
+
+/* === RANGE INPUTS === */
+.form-range::-webkit-slider-thumb {
+    background-color: var(--accent-red-orange);
+}
+
+.form-range::-moz-range-thumb {
+    background-color: var(--accent-red-orange);
+}

@@ -1,0 +1,302 @@
+/* ==============================================
+   FOOTER - ÉPURÉ, ACCESSIBLE & COHÉRENT
+   Thème : Rouge/Orange (#E26155) - Les Cadeaux de Nico
+   ============================================== */
+
+footer {
+  background-color: var(--bg-white);
+  border-top: 1px solid var(--border-light);
+  font-size: 0.95rem;
+  margin-top: auto;
+  padding: 3rem 0 0;
+}
+
+footer .container {
+  max-width: 1200px;
+}
+
+/* === TITRES DE COLONNES === */
+footer h5 {
+  position: relative;
+  color: var(--accent-red-orange);
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+}
+
+footer h5::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background-color: var(--accent-red-orange);
+  border-radius: 1px;
+}
+
+/* === TEXTES & LIENS GÉNÉRAUX === */
+footer p,
+footer ul li a,
+footer span,
+footer small {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+footer a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+footer a:hover {
+  color: var(--accent-red-orange) !important;
+}
+
+/* === LOGO === */
+footer .logo {
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+footer .logo:hover {
+  transform: scale(1.05);
+}
+
+/* === RÉSEAUX SOCIAUX - CENTRAGE + VISIBILITÉ HOVER === */
+footer .social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+footer .social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: 2px solid var(--border-light);
+  border-radius: 50%;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 0 !important;
+  line-height: 1 !important;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+footer .social-links a i {
+  color: inherit !important;
+  fill: inherit !important;
+  pointer-events: none;
+  display: block;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+footer .social-links a:hover {
+  background-color: var(--accent-red-orange) !important;
+  border-color: var(--accent-red-orange) !important;
+  color: var(--white) !important;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(226, 97, 85, 0.3);
+}
+
+footer .social-links a:hover i {
+  color: var(--white) !important;
+  fill: var(--white) !important;
+}
+
+footer .social-links a:focus {
+  outline: 2px solid var(--accent-red-orange);
+  outline-offset: 2px;
+}
+
+/* === LISTES SANS STYLE === */
+footer ul.list-unstyled {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+footer ul li {
+  margin-bottom: 0.75rem;
+}
+
+footer ul li a {
+  position: relative;
+  padding-left: 0;
+  transition: padding-left 0.3s ease;
+}
+
+footer ul li a:hover {
+  padding-left: 5px;
+}
+
+/* === ICÔNES DE CONTACT === */
+footer .fas,
+footer .fab {
+  color: var(--accent-red-orange);
+  width: 16px;
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+  font-size: 0.9rem;
+}
+
+/* === COPYRIGHT & MENTIONS LÉGALES === */
+footer .bg-light {
+  background-color: var(--bg-light) !important;
+  border-top: 1px solid var(--border-light);
+  font-size: 0.9rem;
+  margin-top: 2rem;
+  padding: 1.5rem 0;
+}
+
+footer .text-primary {
+  color: var(--accent-red-orange) !important;
+  font-weight: 600;
+}
+
+/* === BOUTON RETOUR EN HAUT === */
+#back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1050;
+  width: 50px;
+  height: 50px;
+  background-color: var(--accent-red-orange);
+  color: var(--white);
+  border: none;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 12px rgba(226, 97, 85, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+#back-to-top:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(226, 97, 85, 0.4);
+}
+
+#back-to-top i {
+  color: var(--white);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* ==============================================
+   RESPONSIVE
+   ============================================== */
+
+@media (max-width: 992px) {
+  footer .row.g-4 {
+    text-align: center;
+  }
+
+  footer .social-links {
+    justify-content: center;
+  }
+
+  footer h5::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  footer ul li a:hover {
+    padding-left: 0;
+    padding-bottom: 2px;
+    border-bottom: 1px solid var(--accent-red-orange);
+  }
+}
+
+@media (max-width: 768px) {
+  footer .col-lg-4,
+  footer .col-lg-2 {
+    margin-bottom: 2rem;
+  }
+
+  footer .bg-light .row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  footer .bg-light .col-md-6:last-child {
+    margin-top: 1rem;
+  }
+
+  #back-to-top {
+    width: 45px;
+    height: 45px;
+    font-size: 1rem;
+    bottom: 15px;
+    right: 15px;
+  }
+
+  footer .social-links a {
+    width: 38px;
+    height: 38px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 576px) {
+  footer {
+    font-size: 0.85rem;
+  }
+
+  footer .container.py-5 {
+    padding: 2rem 1rem !important;
+  }
+
+  footer h5 {
+    font-size: 1rem;
+  }
+
+  footer .social-links {
+    gap: 0.75rem;
+  }
+
+  footer .social-links a {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+
+  footer .logo {
+    height: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  footer .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  footer .social-links a {
+    width: 34px;
+    height: 34px;
+    font-size: 0.85rem;
+  }
+}

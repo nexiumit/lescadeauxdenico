@@ -1,0 +1,75 @@
+/* === BOUTONS - THÈME ROUGE/ORANGE UNIQUEMENT + CONTRASTE === */
+.btn-primary,
+.btn-success { /* ✅ UNIFIÉ */
+    background: linear-gradient(135deg, var(--accent-red-orange), var(--accent-hover)) !important;
+    border: 2px solid var(--accent-red-orange) !important;
+    color: var(--white) !important;
+    padding: 0.75rem 1.5rem !important;
+    border-radius: 0.5rem !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 15px rgba(226, 97, 85, 0.2) !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+}
+
+.btn-primary:hover,
+.btn-success:hover {
+    background: linear-gradient(135deg, var(--accent-hover), var(--accent-red-orange)) !important;
+    border-color: var(--accent-hover) !important;
+    color: var(--white) !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 25px rgba(226, 97, 85, 0.4) !important;
+}
+
+.btn-outline-primary {
+    background: transparent !important;
+    border: 2px solid var(--accent-red-orange) !important;
+    color: var(--accent-red-orange) !important;
+    font-weight: 600 !important;
+}
+
+.btn-outline-primary:hover {
+    background: linear-gradient(135deg, var(--accent-red-orange), var(--accent-hover)) !important;
+    color: var(--white) !important;
+    transform: translateY(-2px) !important;
+}
+
+.btn-outline-light {
+    border: 2px solid var(--white) !important;
+    color: var(--white) !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(10px);
+}
+
+.btn-outline-light:hover {
+    background: var(--white) !important;
+    color: var(--accent-red-orange) !important;
+    border-color: var(--white) !important;
+}
+
+/* ✅ FILTRES CATALOGUE - CONTRASTE FORCÉ */
+.filter-btn,
+.btn-outline-secondary[data-category] {
+    background: linear-gradient(135deg, var(--accent-red-orange), var(--accent-hover)) !important;
+    border-color: var(--accent-red-orange) !important;
+    color: var(--white) !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: linear-gradient(135deg, var(--accent-hover), var(--accent-red-orange)) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Icônes boutons toujours blanches */
+.btn i { color: var(--white) !important; }
+.btn:hover i { transform: scale(1.1) !important; }
+
+/* RESPONSIVE */
+@media (max-width: 576px) {
+    .btn-primary, .btn-success, .btn-lg {
+        width: 100% !important;
+        padding: 0.75rem 1rem !important;
+    }
+}

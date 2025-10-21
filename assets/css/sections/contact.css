@@ -1,0 +1,134 @@
+/* === SECTION CONTACT SPÉCIFIQUE === */
+.contact-form-band {
+    background: linear-gradient(135deg, var(--bg-white) 0%, var(--bg-light) 100%);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.contact-form-band h2 {
+    position: relative;
+    display: inline-block;
+    color: var(--text-primary);
+}
+
+.contact-form-band h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-red-orange);
+    border-radius: 2px;
+}
+
+/* === ICON-BOX SANS BLEU === */
+.icon-box {
+    border-left: 4px solid var(--accent-red-orange); /* ✅ PLUS DE BLEU */
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.icon-box:hover {
+    box-shadow: 0 4px 12px rgba(226, 97, 85, 0.15);
+    transform: translateX(5px);
+}
+
+.icon-box i {
+    color: var(--accent-red-orange);
+}
+
+/* === LAYOUT CÔTE À CÔTE === */
+.contact-form-band .col-lg-4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.contact-form-band .col-lg-4 h3 {
+    color: var(--accent-red-orange);
+    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+}
+
+/* === FORMULAIRE SPÉCIFIQUE === */
+.contact-form-band .form-control,
+.contact-form-band .form-select {
+    border: 2px solid var(--border-light);
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.contact-form-band .form-control:focus,
+.contact-form-band .form-select:focus {
+    border-color: var(--accent-red-orange);
+    box-shadow: 0 0 0 0.2rem rgba(226, 97, 85, 0.25);
+    outline: none;
+}
+
+.contact-form-band .form-label {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.contact-form-band .text-danger {
+    color: #dc3545 !important;
+}
+
+/* === CHECKBOX RGPD === */
+.contact-form-band .form-check-input:checked {
+    background-color: var(--accent-red-orange);
+    border-color: var(--accent-red-orange);
+}
+
+.contact-form-band .form-check-label a {
+    color: var(--accent-red-orange);
+    text-decoration: none;
+}
+
+.contact-form-band .form-check-label a:hover {
+    text-decoration: underline;
+}
+
+/* === VALIDATION VISUELLE === */
+.was-validated .form-control:invalid,
+.was-validated .form-select:invalid {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+.was-validated .form-control:valid,
+.was-validated .form-select:valid {
+    border-color: #28a745;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 991.98px) {
+    .contact-form-band .col-lg-4 {
+        margin-top: 2rem;
+    }
+    
+    .icon-box {
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-form-band {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+    
+    .contact-form-band .btn-lg {
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+    }
+}

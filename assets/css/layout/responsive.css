@@ -1,0 +1,182 @@
+/* === RESPONSIVE - MOBILE FIRST === */
+
+/* === TABLETTE ET < 992px === */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    background-color: var(--white);
+    border-top: 1px solid var(--border-light);
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+ 
+  .navbar-collapse .nav-link {
+    margin: 0.5rem 0;
+    padding: 0.75rem 1rem !important;
+  }
+ 
+  .navbar-brand .logo { 
+    height: 40px; 
+  }
+}
+
+/* === MOBILE ET < 768px === */
+@media (max-width: 768px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.75rem; }
+ 
+  /* ✅ MODIFIÉ : LOGO HERO PLUS GRAND RESPONSIVE */
+  .logo-hero { 
+    height: 140px; /* ✅ Réduit de 200px desktop à 140px mobile */
+    max-width: 300px; 
+  }
+ 
+  /* ✅ MODIFIÉ : SLOGAN PLUS PETIT MOBILE */
+  .hero-band .display-4 { 
+    font-size: 1.75rem !important; /* ✅ -0.75rem vs desktop (2.5rem → 1.75rem) */
+    line-height: 1.2;
+  }
+  
+  .contact-band .display-5 { 
+    font-size: 2rem; 
+  }
+ 
+  .btn-primary, 
+  .btn-secondary, 
+  .btn-lg { 
+    width: 100%; 
+    margin-bottom: 1rem; 
+  }
+  
+  .hero-band .btn-lg { 
+    width: 100%; 
+  }
+  
+  /* Catalogue mobile */
+  #product-grid {
+    row-gap: 1.5rem;
+  }
+  
+  #filter-container {
+    gap: 0.5rem;
+  }
+}
+
+/* === PETIT MOBILE ET < 576px === */
+@media (max-width: 576px) {
+  /* ✅ MODIFIÉ : LOGO HERO ENCORE PLUS COMPACT */
+  .logo-hero { 
+    height: 120px; /* ✅ Très compact mobile */
+    max-width: 250px;
+  }
+  
+  /* ✅ MODIFIÉ : SLOGAN ENCORE PLUS PETIT */
+  .hero-band .display-4 { 
+    font-size: 1.5rem !important; /* ✅ -1rem vs desktop */
+    line-height: 1.3;
+  }
+  
+  /* Sections padding uniforme */
+  .hero-band,
+  .bestsellers-band,
+  .contact-band { 
+    padding-top: 2rem !important; 
+    padding-bottom: 2rem !important; 
+  }
+  
+  /* Boutons full width mobile */
+  .btn {
+    padding: 0.75rem 1rem !important;
+    font-size: 0.95rem !important;
+  }
+  
+  /* Catalogue boutons */
+  #product-grid .btn {
+    padding: 0.625rem !important;
+    font-size: 0.9rem !important;
+  }
+  
+  /* Pagination compacte */
+  #pagination-container .page-link {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    margin: 0 0.125rem;
+  }
+  
+  /* Hero boutons stackés */
+  .hero-band .d-flex {
+    flex-direction: column !important;
+  }
+  
+  .hero-band .btn-lg {
+    padding: 1rem !important;
+    font-size: 1rem !important;
+  }
+}
+
+/* === EXTRA PETIT MOBILE < 480px === */
+@media (max-width: 480px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.5rem; }
+  
+  .logo-hero { 
+    height: 100px; /* ✅ Ultra-compact */
+    max-width: 220px;
+  }
+  
+  .hero-band .display-4 { 
+    font-size: 1.375rem !important;
+    padding: 0 1rem;
+  }
+  
+  /* Filtres scroll horizontal */
+  #filter-container {
+    padding-bottom: 0.75rem;
+  }
+  
+  .filter-btn {
+    padding: 0.5rem 0.875rem !important;
+    font-size: 0.85rem !important;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+}
+
+/* === LANDSCAPE MOBILE === */
+@media (max-width: 768px) and (orientation: landscape) {
+  .hero-band .col-lg-8 {
+    padding: 0 1rem;
+  }
+  
+  .logo-hero {
+    height: 120px;
+    max-width: 280px;
+  }
+}
+
+/* === PRINT === */
+@media print {
+  .navbar, 
+  .btn, 
+  footer,
+  #back-to-top,
+  #filter-container {
+    display: none !important;
+  }
+  
+  .card {
+    box-shadow: none !important;
+    border: 1px solid #ddd !important;
+  }
+  
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+  }
+}

@@ -1,0 +1,73 @@
+/* === IMPORTS MODULAIRES === */
+@import url('./main.css');
+@import url('./components/buttons.css');
+@import url('./components/cards.css');
+@import url('./components/navbar.css');
+@import url('./components/logo.css');
+@import url('./components/forms.css');
+@import url('./sections/hero.css');
+@import url('./sections/bestsellers.css');
+@import url('./sections/contact.css');
+@import url('./sections/footer.css');
+@import url('./sections/product.css');
+@import url('./sections/catalog.css'); /* ✅ AJOUTÉ */
+@import url('./layout/animations.css');
+@import url('./layout/responsive.css');
+
+/* === ULTIME OVERRIDE BLEU + COHÉRENCE BOUTONS === */
+.btn-primary,
+.btn-success,
+.btn-outline-primary,
+.text-primary,
+.link-primary {
+    --bs-btn-bg: var(--accent-red-orange) !important;
+    --bs-btn-border-color: var(--accent-red-orange) !important;
+    --bs-btn-hover-bg: var(--accent-hover) !important;
+    color: var(--white) !important;
+    border-color: var(--accent-red-orange) !important;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--accent-red-orange) !important;
+    box-shadow: 0 0 0 0.25rem rgba(226, 97, 85, 0.25) !important;
+    outline: none !important;
+}
+
+/* === PAGINATION ROUGE === */
+.pagination .page-link.active {
+    background-color: var(--accent-red-orange) !important;
+    border-color: var(--accent-red-orange) !important;
+}
+
+.pagination .page-link:hover {
+    background-color: var(--accent-hover) !important;
+    border-color: var(--accent-hover) !important;
+    color: var(--white) !important;
+}
+
+/* === UTILITAIRES GÉNÉRAUX === */
+.text-accent { color: var(--accent-red-orange) !important; }
+.bg-accent { background-color: var(--accent-red-orange); color: var(--white); }
+.border-accent { border-color: var(--accent-red-orange) !important; }
+
+.section-light { background-color: var(--bg-light); }
+.section-white { background-color: var(--white); }
+.section-accent {
+    background: linear-gradient(135deg, var(--accent-red-orange), var(--accent-hover));
+    color: var(--white);
+}
+
+/* === SÉCURITÉ ANTI-BLEU ULTIME === */
+*[style*="007bff"],
+*[style*="blue"],
+*[style*="#00"] {
+    background-color: var(--accent-red-orange) !important;
+    border-color: var(--accent-red-orange) !important;
+    color: var(--white) !important;
+}
+
+[class*="primary"]:not(.btn-primary):not(.text-primary) {
+    color: var(--accent-red-orange) !important;
+    border-color: var(--accent-red-orange) !important;
+}
