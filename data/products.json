@@ -36,6 +36,24 @@
     "isBestseller": false
   },
   {
+    "slug": "bouchons-bouteille-vin",
+    "title": "Bouchons de bouteille de vin personnalisés",
+    "shortDescription": "Bouchons de bouteille personnalisables par gravure",
+    "description": "Bouchons de bouteille en bois et caoutchouc, personnalisables par gravure pour un cadeau élégant ou une promotion d’entreprise.",
+    "price": "À partir de 10€",
+    "materials": ["Bois", "Caoutchouc"],
+    "dimensions": "Hauteur 1 cm",
+    "images": [
+      "assets/img/products/bouchons-bouteille-vin-01.webp",
+      "assets/img/products/bouchons-bouteille-vin-02.webp",
+      "assets/img/products/bouchons-bouteille-vin-03.webp",
+      "assets/img/products/bouchons-bouteille-vin-04.webp"
+    ],
+    "category": "Accessoires",
+    "customizationOptions": ["Gravure nom", "Logo"],
+    "isBestseller": false
+  },  
+  {
     "slug": "casquette",
     "title": "Casquette personnalisée",
     "shortDescription": "Casquette inspirée des jeux de baseball américains, respirante et réglable.",
@@ -111,8 +129,24 @@
     "category": "Coutellerie",
     "customizationOptions": ["Gravure nom", "Logo"],
     "isBestseller": false
-  }
-,
+  },
+  {
+    "slug": "decapsuleur-bois-rectangulaire",
+    "title": "Décapsuleur bois rectangulaire personnalisé",
+    "shortDescription": "Décapsuleur en bois rectangulaire gravé",
+    "description": "Décapsuleur robuste avec manche en bois rectangulaire, personnalisable par gravure. Idéal pour cadeaux ou événements promotionnels.",
+    "price": "À partir de 8€",
+    "materials": ["Bois", "Acier inoxydable"],
+    "dimensions": "10 x 4 cm",
+    "images": [
+      "assets/img/products/decapsuleur-bois-rectangulaire-01.webp",
+      "assets/img/products/decapsuleur-bois-rectangulaire-02.webp",
+      "assets/img/products/decapsuleur-bois-rectangulaire-03.webp"
+    ],
+    "category": "Accessoires",
+    "customizationOptions": ["Gravure nom", "Logo"],
+    "isBestseller": false
+  },  
   {
     "slug": "decapsuleur-magnet",
     "title": "Décapsuleur magnet personnalisé",
@@ -189,11 +223,29 @@
       "assets/img/products/gourde-isotherme-03.webp",
       "assets/img/products/gourde-isotherme-04.webp",
       "assets/img/products/gourde-isotherme-05.webp",
-      "assets/img/products/gourde-isotherme-06.webp"
+      "assets/img/products/gourde-isotherme-06.webp",
+      "assets/img/products/gourde-isotherme-07.webp"      
     ],
     "category": "Sport et boisson",
     "customizationOptions": ["Gravure logo", "Impression couleur"],
     "isBestseller": true
+  },
+  {
+    "slug": "magnet",
+    "title": "Magnet personnalisé",
+    "shortDescription": "Magnet personnalisable par impression ou gravure",
+    "description": "Magnet polyvalent pour réfrigérateur ou surfaces métalliques, personnalisable avec logo ou visuel. Idéal pour la promotion ou la décoration.",
+    "price": "À partir de 6€",
+    "materials": ["Plastique", "Aimant néodyme"],
+    "dimensions": "7,5 x 5,5 cm",
+    "images": [
+      "assets/img/products/magnet-01.webp",
+      "assets/img/products/magnet-02.webp",
+      "assets/img/products/magnet-03.webp"
+    ],
+    "category": "Décoration",
+    "customizationOptions": ["Impression couleur", "Gravure logo"],
+    "isBestseller": false
   },
   {
     "slug": "magnet-bambou",
@@ -273,7 +325,8 @@
     "images": [
       "assets/img/products/set-de-vin-01.webp",
       "assets/img/products/set-de-vin-02.webp",
-      "assets/img/products/set-de-vin-03.webp"
+      "assets/img/products/set-de-vin-03.webp",
+      "assets/img/products/set-de-vin-04.webp"     
     ],
     "category": "Accessoires Vin",
     "customizationOptions": ["Gravure sur bambou ou métal"],
@@ -290,8 +343,7 @@
     "images": [
       "assets/img/products/stylo-01.webp",
       "assets/img/products/stylo-02.webp",
-      "assets/img/products/stylo-03.webp",
-      "assets/img/products/stylo-03.jpg.webp"
+      "assets/img/products/stylo-03.webp"
     ],
     "category": "Papeterie",
     "customizationOptions": ["Gravure nom", "Logo", "Impression couleur"],
@@ -353,57 +405,5 @@
     "category": "Sacs",
     "customizationOptions": ["Impression couleur", "Broderie logo"],
     "isBestseller": true
-  },
-  {
-    "slug": "bouchons-bouteille-vin",
-    "title": "Bouchons de bouteille de vin personnalisés",
-    "shortDescription": "Bouchons de bouteille personnalisables par gravure",
-    "description": "Bouchons de bouteille en bois et caoutchouc, personnalisables par gravure pour un cadeau élégant ou une promotion d’entreprise.",
-    "price": "À partir de 10€",
-    "materials": ["Bois", "Caoutchouc"],
-    "dimensions": "Hauteur 1 cm",
-    "images": [
-      "assets/img/products/bouchons-bouteille-vin-01.webp",
-      "assets/img/products/bouchons-bouteille-vin-02.webp",
-      "assets/img/products/bouchons-bouteille-vin-03.webp",
-      "assets/img/products/bouchons-bouteille-vin-04.webp"
-    ],
-    "category": "Accessoires",
-    "customizationOptions": ["Gravure nom", "Logo"],
-    "isBestseller": false
-  },
-  {
-    "slug": "decapsuleur-bois-rectangulaire",
-    "title": "Décapsuleur bois rectangulaire personnalisé",
-    "shortDescription": "Décapsuleur en bois rectangulaire gravé",
-    "description": "Décapsuleur robuste avec manche en bois rectangulaire, personnalisable par gravure. Idéal pour cadeaux ou événements promotionnels.",
-    "price": "À partir de 8€",
-    "materials": ["Bois", "Acier inoxydable"],
-    "dimensions": "10 x 4 cm",
-    "images": [
-      "assets/img/products/decapsuleur-bois-rectangulaire-01.webp",
-      "assets/img/products/decapsuleur-bois-rectangulaire-02.webp",
-      "assets/img/products/decapsuleur-bois-rectangulaire-03.webp"
-    ],
-    "category": "Accessoires",
-    "customizationOptions": ["Gravure nom", "Logo"],
-    "isBestseller": false
-  },
-  {
-    "slug": "magnet",
-    "title": "Magnet personnalisé",
-    "shortDescription": "Magnet personnalisable par impression ou gravure",
-    "description": "Magnet polyvalent pour réfrigérateur ou surfaces métalliques, personnalisable avec logo ou visuel. Idéal pour la promotion ou la décoration.",
-    "price": "À partir de 6€",
-    "materials": ["Plastique", "Aimant néodyme"],
-    "dimensions": "7,5 x 5,5 cm",
-    "images": [
-      "assets/img/products/magnet-01.webp",
-      "assets/img/products/magnet-02.webp",
-      "assets/img/products/magnet-03.webp"
-    ],
-    "category": "Décoration",
-    "customizationOptions": ["Impression couleur", "Gravure logo"],
-    "isBestseller": false
   }
 ]
