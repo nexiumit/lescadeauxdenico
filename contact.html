@@ -40,7 +40,6 @@
                     <div id="success-message" class="alert alert-success d-none" role="alert">
                         <i class="fas fa-check-circle me-2"></i>
                         <strong>Message envoyé avec succès !</strong> Nous vous répondrons sous 48h maximum. 
-                        Vous allez recevoir un email de confirmation.
                     </div>
                     
                     <!-- Message d'erreur (caché par défaut) -->
@@ -74,7 +73,7 @@ Merci pour votre message ! Nous l'avons bien reçu et nous reviendrons vers vous
 
 Votre demande est importante pour nous et notre équipe analyse dès maintenant votre projet pour vous proposer la meilleure solution personnalisée.
 
-📧 Vous pouvez également nous joindre directement à : contact@lescadeauxdenico.fr
+📧 Vous pouvez également nous joindre directement à : lescadeauxdenico@gmail.com
 
 À très bientôt,
 L'équipe Les Cadeaux de Nico
@@ -163,7 +162,7 @@ L'équipe Les Cadeaux de Nico
                                 <div class="icon-box p-3 bg-white rounded shadow-sm text-center">
                                     <i class="fas fa-envelope fa-2x text-accent mb-3"></i>
                                     <h4 class="fw-bold mb-2">Email</h4>
-                                    <p class="mb-0 text-dark">contact@lescadeauxdenico.fr</p>
+                                    <p class="mb-0 text-dark" id="email-container">(Adresse mail en cours de chargement...)</p>
                                 </div>
                             </div>
                             <div class="col-12">
@@ -279,6 +278,22 @@ L'équipe Les Cadeaux de Nico
                 btnLoader.classList.add('d-none');
             });
         })();
+
+        // Attendre que la page soit complètement chargée
+        document.addEventListener('DOMContentLoaded', function() {
+            // Adresse mail obfusquée (exemple avec code ASCII)
+            const user = String.fromCharCode(108, 101, 115, 99, 97, 100, 101, 97, 117, 120, 100, 101, 110, 105, 99, 111);
+            const domain = String.fromCharCode(103, 109, 97, 105, 108, 46, 99, 111, 109);
+            const email = user + "@" + domain;
+
+            // Afficher l'adresse mail dans le conteneur
+            const emailContainer = document.getElementById('email-container');
+            if (emailContainer) {
+                emailContainer.textContent = email;
+                // Optionnel : ajouter un lien "mailto:"
+                emailContainer.innerHTML = `<a href="mailto:${email}" class="text-dark text-decoration-none">${email}</a>`;
+            }
+        });
     </script>
 </body>
 </html>
