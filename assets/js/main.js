@@ -230,6 +230,7 @@ async function renderProduct() {
                     <li><strong>Personnalisation :</strong> ${product.customizationOptions.join(', ')}</li>
                 </ul>
                 <p class="price text-accent fw-bold fs-3">${product.price}</p>
+                <p>Tarif dégressif en fonction des quantitées commandées</p>
                 <a href="mailto:contact@lescadeauxdenico.fr?subject=Personnalisation ${encodeURIComponent(product.title)}" 
                    class="btn btn-primary btn-lg w-100">
                    <i class="fas fa-envelope me-2"></i> Nous contacter pour personnaliser
