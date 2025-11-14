@@ -106,7 +106,7 @@ async function renderCatalogue() {
                         <h5 class="card-title">${p.title}</h5>
                         <p class="card-text">${p.shortDescription}</p>
                         <div class="price text-accent fw-bold">${p.price}</div>
-                        <p>Tarif dégressif en fonction des quantitées commandées</p>
+                        <p class="degressive-pricing">Tarif dégressif en fonction des quantités commandées</p>
                         <a href="product.html?slug=${p.slug}" class="btn btn-primary mt-2">Voir le produit</a>
                     </div>
                 </div>
@@ -231,7 +231,7 @@ async function renderProduct() {
                     <li><strong>Personnalisation :</strong> ${product.customizationOptions.join(', ')}</li>
                 </ul>
                 <p class="price text-accent fw-bold fs-3">${product.price}</p>
-                <p>Tarif dégressif en fonction des quantitées commandées</p>
+                <p>Tarif dégressif en fonction des quantités commandées</p>
                 <a href="contact.html" class="btn btn-primary btn-lg w-100">
                 <i class="fas fa-paper-plane me-2"></i> Nous contacter pour personnaliser
                 </a>

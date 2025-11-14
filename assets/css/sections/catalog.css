@@ -3,7 +3,6 @@ main.container {
     padding-top: 2rem;
     padding-bottom: 2rem;
 }
-
 /* === FILTRES - ESPACE DU HEADER + STYLE AMÉLIORÉ === */
 #filter-container {
     display: flex;
@@ -17,7 +16,6 @@ main.container {
     border: 1px solid var(--border-light);
     backdrop-filter: blur(10px);
 }
-
 #filter-container .filter-btn {
     background: linear-gradient(135deg, var(--accent-red-orange), var(--accent-hover)) !important;
     border: none !important;
@@ -31,7 +29,6 @@ main.container {
     position: relative;
     overflow: hidden;
 }
-
 #filter-container .filter-btn::before {
     content: '';
     position: absolute;
@@ -42,11 +39,9 @@ main.container {
     background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
     transition: left 0.5s ease;
 }
-
 #filter-container .filter-btn:hover::before {
     left: 100%;
 }
-
 #filter-container .filter-btn:hover,
 #filter-container .filter-btn.active {
     background: linear-gradient(135deg, var(--accent-hover), var(--accent-red-orange)) !important;
@@ -54,7 +49,6 @@ main.container {
     box-shadow: 0 6px 20px rgba(226, 97, 85, 0.4);
     color: var(--white) !important;
 }
-
 /* === ZOOM SYNCHRONISÉ - CATALOGUE ET BEST-SELLERS (SUBTIL FIXE) === */
 #product-grid .card,
 .bestsellers-band .card {
@@ -68,51 +62,45 @@ main.container {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     overflow: visible;
 }
-
 #product-grid .card:hover,
 .bestsellers-band .card:hover {
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
     transform: none;
 }
-
-/* ✅ WRAPPER ZOOM - TAILLE FIXE */
+/* WRAPPER ZOOM - TAILLE FIXE */
 #product-grid .card-img-wrapper,
 .bestsellers-band .card-img-wrapper {
     position: relative;
     overflow: hidden;
-    height: 250px; /* ✅ TAILLE FIXE */
+    height: 250px; /* TAILLE FIXE */
     border-radius: 1rem 1rem 0 0;
     margin: 0;
     padding: 0;
-    transition: box-shadow 0.3s ease; /* ✅ Seulement l'ombre */
+    transition: box-shadow 0.3s ease; /* Seulement l'ombre */
     z-index: 2;
     background: #fff;
 }
-
 #product-grid .card:hover .card-img-wrapper,
 .bestsellers-band .card:hover .card-img-wrapper {
-    /* ✅ PAS DE CHANGEMENT DE TAILLE */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* ✅ Ombre subtile seulement */
+    /* PAS DE CHANGEMENT DE TAILLE */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Ombre subtile seulement */
     z-index: 10;
 }
-
 #product-grid .card-img-wrapper img,
 .bestsellers-band .card-img-wrapper img {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* ✅ Images entières */
+    object-fit: contain; /* Images entières */
     object-position: center;
-    transition: transform 0.3s ease; /* ✅ Transition plus rapide */
+    transition: transform 0.3s ease; /* Transition plus rapide */
     display: block;
     background: #fff;
 }
-
 #product-grid .card:hover .card-img-wrapper img,
 .bestsellers-band .card:hover .card-img-wrapper img {
-    transform: scale(1.05); /* ✅ ZOOM TRÈS SUBTIL - 5% seulement */
+    transform: scale(1.05); /* ZOOM TRÈS SUBTIL - 5% seulement */
 }
-
-/* ✅ OVERLAY UNIFIÉ */
+/* OVERLAY UNIFIÉ */
 #product-grid .card::before,
 .bestsellers-band .card::before {
     content: '';
@@ -131,12 +119,10 @@ main.container {
     z-index: 3;
     border-radius: 1rem;
 }
-
 #product-grid .card:hover::before,
 .bestsellers-band .card:hover::before {
     opacity: 1;
 }
-
 /* BADGE UNIFIÉ */
 .badge-new {
     position: absolute;
@@ -146,7 +132,6 @@ main.container {
     background-color: var(--accent-red-orange) !important;
     color: var(--white) !important;
 }
-
 /* === CONTENU CARD - BOUTON CENTRÉ === */
 #product-grid .card-body {
     padding: 1.5rem;
@@ -156,7 +141,6 @@ main.container {
     flex-direction: column;
     height: 100%;
 }
-
 #product-grid .card-title {
     color: var(--primary-gray-dark) !important;
     font-weight: 700;
@@ -166,11 +150,9 @@ main.container {
     font-size: 1.1rem;
     flex-grow: 1;
 }
-
 #product-grid .card:hover .card-title {
     color: var(--accent-red-orange) !important;
 }
-
 #product-grid .card-text {
     color: var(--text-secondary);
     font-size: 0.95rem;
@@ -178,7 +160,6 @@ main.container {
     line-height: 1.5;
     flex-grow: 1;
 }
-
 #product-grid .price {
     color: var(--accent-red-orange) !important;
     font-weight: 700;
@@ -186,8 +167,7 @@ main.container {
     margin-bottom: 1rem;
     transition: none;
 }
-
-/* ✅ BOUTON CENTRÉ HORIZONTALEMENT */
+/* BOUTON CENTRÉ HORIZONTALEMENT */
 #product-grid .btn {
     display: block !important;
     width: 100%;
@@ -202,20 +182,17 @@ main.container {
     box-shadow: 0 4px 15px rgba(226, 97, 85, 0.2);
     transition: all 0.3s ease;
 }
-
 #product-grid .btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(226, 97, 85, 0.4) !important;
     color: var(--white) !important;
 }
-
 /* === PAGINATION === */
 #pagination-container {
     margin-top: 3rem;
     display: flex;
     justify-content: center;
 }
-
 #pagination-container .pagination .page-link {
     color: var(--accent-red-orange);
     border-color: var(--border-light);
@@ -223,20 +200,17 @@ main.container {
     border-radius: 0.5rem;
     transition: all 0.3s ease;
 }
-
 #pagination-container .pagination .page-link:hover {
     background-color: var(--accent-hover);
     border-color: var(--accent-hover);
     color: var(--white);
     transform: translateY(-1px);
 }
-
 #pagination-container .pagination .page-item.active .page-link {
     background-color: var(--accent-red-orange) !important;
     border-color: var(--accent-red-orange) !important;
     color: var(--white) !important;
 }
-
 /* RESPONSIVE - TAILLE FIXE PARTOT */
 @media (max-width: 768px) {
     #filter-container {
@@ -244,28 +218,27 @@ main.container {
         padding: 0.75rem;
         gap: 0.5rem;
     }
-    
+   
     #product-grid .card-img-wrapper,
     .bestsellers-band .card-img-wrapper {
-        height: 200px; /* ✅ FIXE */
+        height: 200px; /* FIXE */
     }
-    
+   
     #product-grid .card:hover .card-img-wrapper,
     .bestsellers-band .card:hover .card-img-wrapper {
-        /* ✅ PAS DE CHANGEMENT DE TAILLE */
+        /* PAS DE CHANGEMENT DE TAILLE */
         box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
     }
-    
+   
     #product-grid .card:hover .card-img-wrapper img,
     .bestsellers-band .card:hover .card-img-wrapper img {
-        transform: scale(1.03); /* ✅ ENCORE PLUS SUBTIL */
+        transform: scale(1.03); /* ENCORE PLUS SUBTIL */
     }
-    
+   
     #product-grid .card-body {
         padding: 1.25rem;
     }
 }
-
 @media (max-width: 576px) {
     #filter-container {
         justify-content: flex-start;
@@ -275,32 +248,124 @@ main.container {
         background: transparent;
         border: none;
     }
-    
+   
     #filter-container .filter-btn {
         padding: 0.5rem 1rem;
         font-size: 0.9rem;
         white-space: nowrap;
         flex-shrink: 0;
     }
-    
+   
     #product-grid .card-img-wrapper,
     .bestsellers-band .card-img-wrapper {
-        height: 180px; /* ✅ FIXE */
+        height: 180px; /* FIXE */
     }
-    
+   
     #product-grid .card:hover .card-img-wrapper,
     .bestsellers-band .card:hover .card-img-wrapper {
-        /* ✅ PAS DE CHANGEMENT DE TAILLE */
+        /* PAS DE CHANGEMENT DE TAILLE */
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     }
-    
+   
     #product-grid .card:hover .card-img-wrapper img,
     .bestsellers-band .card:hover .card-img-wrapper img {
-        transform: scale(1.02); /* ✅ ZOOM ULTRA-SUBTIL MOBILE */
+        transform: scale(1.02); /* ZOOM ULTRA-SUBTIL MOBILE */
     }
-    
+   
     #product-grid .btn {
         padding: 0.625rem;
         font-size: 0.9rem;
     }
+}
+
+/* ==============================================
+   AMÉLIORATIONS FINALES - CARTES CATALOGUE
+   (Titres & descriptions parfaitement alignés)
+   ============================================== */
+
+/* 1. Titre : 2 lignes max, hauteur fixe */
+#product-grid .card-title {
+    margin-bottom: 0.25rem !important;
+    font-size: 1.05rem !important;
+    line-height: 1.3 !important;
+    min-height: 2.6em !important;
+    max-height: 2.6em !important;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    flex-grow: 0 !important;
+}
+
+/* 2. Description : 4 lignes fixes, pas de débordement */
+#product-grid .card-text {
+    margin-bottom: 0.5rem !important;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    min-height: 5.6em !important;
+    max-height: 5.6em !important;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    padding-right: 0.25rem;
+    flex-grow: 0 !important;
+}
+
+/* 3. Prix + texte dégressif : toujours à droite, même hauteur */
+#product-grid .price {
+    margin-bottom: 0.25rem !important;
+    text-align: right !important;
+    font-size: 1.3rem !important;
+    line-height: 1.2;
+}
+
+#product-grid .degressive-pricing {
+    margin: 0.125rem 0 0.75rem 0 !important;
+    text-align: right !important;
+    font-size: 0.75rem !important;
+    color: #888 !important;
+    font-style: italic;
+    line-height: 1.3;
+}
+
+/* 4. Bouton compact */
+#product-grid .btn {
+    margin-top: 0.5rem !important;
+    padding: 0.65rem 1rem !important;
+    font-size: 0.9rem !important;
+}
+
+/* 5. Bloc bas : prix + texte + bouton alignés */
+#product-grid .card-body > .mt-auto {
+    margin-top: auto !important;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.25rem;
+    padding-top: 0.5rem;
+}
+
+/* ==============================================
+   CORRECTION FINALE : SUPPRESSION DU BLANC SOUS LE BOUTON
+   (Sans toucher à l'alignement)
+   ============================================== */
+#product-grid .card-body {
+    padding: 1.25rem 1.25rem 0.75rem 1.25rem !important;
+    gap: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    height: auto !important;
+    min-height: 280px;
+}
+
+#product-grid .card {
+    height: auto !important;
+    display: flex;
+    flex-direction: column;
 }
