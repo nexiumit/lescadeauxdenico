@@ -106,6 +106,7 @@ async function renderCatalogue() {
                         <h5 class="card-title">${p.title}</h5>
                         <p class="card-text">${p.shortDescription}</p>
                         <div class="price text-accent fw-bold">${p.price}</div>
+                        <p>Tarif dégressif en fonction des quantitées commandées</p>
                         <a href="product.html?slug=${p.slug}" class="btn btn-primary mt-2">Voir le produit</a>
                     </div>
                 </div>
