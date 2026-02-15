@@ -4,29 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Produit - Les Cadeaux de Nico</title>
-  <meta name="description" content="Découvrez nos produits personnalisés.">
+  <meta name="description" content="Découvrez nos produits personnalisés et demandez votre devis en ligne.">
+  <meta name="theme-color" content="#E26155">
+  <link rel="canonical" href="https://lescadeauxdenico.fr/product.html">
+  <meta property="og:type" content="product">
+  <meta property="og:site_name" content="Les Cadeaux de Nico">
+  <meta property="og:title" content="Produit - Les Cadeaux de Nico">
+  <meta property="og:description" content="Produit personnalisable, devis rapide et accompagnement sur mesure.">
+  <meta property="og:image" content="https://lescadeauxdenico.fr/assets/img/logo.webp">
+  <meta property="og:url" content="https://lescadeauxdenico.fr/product.html">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Produit - Les Cadeaux de Nico">
+  <meta name="twitter:description" content="Produit personnalisable, devis rapide et accompagnement sur mesure.">
+  <meta name="twitter:image" content="https://lescadeauxdenico.fr/assets/img/logo.webp">
   <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
   <!-- ✅ CORRIGÉ : styles.css → style.css -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
 
-  <script>
-    document.addEventListener('DOMContentLoaded', async () => {
-      const urlParams = new URLSearchParams(window.location.search);
-      const slug = urlParams.get('slug');
-      if (slug) {
-        const res = await fetch('data/products.json');
-        const products = await res.json();
-        const product = products.find(p => p.slug === slug);
-        if (product) {
-          document.title = `${product.title} - Les Cadeaux de Nico`;
-          document.querySelector('meta[name="description"]').setAttribute('content', product.shortDescription);
-        }
-      }
-    });
-  </script>
-  
 </head>
 <body>
   <div id="header-container"></div>
@@ -36,6 +33,8 @@
   <div id="footer-container"></div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
   <script src="assets/js/includeTemplates.js" defer></script>
+  <script src="assets/js/site-config.js" defer></script>
+  <script src="assets/js/analytics.js" defer></script>
   <script src="assets/js/main.js" defer></script>
 </body>
 </html>

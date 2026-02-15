@@ -4,6 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Les Cadeaux de Nico</title>
+    <meta name="description" content="Contactez Les Cadeaux de Nico pour vos cadeaux personnalisés. Réponse rapide, devis sur mesure, accompagnement de votre projet.">
+    <meta name="theme-color" content="#E26155">
+    <link rel="canonical" href="https://lescadeauxdenico.fr/contact.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Les Cadeaux de Nico">
+    <meta property="og:title" content="Contact - Les Cadeaux de Nico">
+    <meta property="og:description" content="Demandez un devis personnalisé. Réponse sous 48h maximum.">
+    <meta property="og:image" content="https://lescadeauxdenico.fr/assets/img/logo.webp">
+    <meta property="og:url" content="https://lescadeauxdenico.fr/contact.html">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact - Les Cadeaux de Nico">
+    <meta name="twitter:description" content="Demandez un devis personnalisé. Réponse sous 48h maximum.">
+    <meta name="twitter:image" content="https://lescadeauxdenico.fr/assets/img/logo.webp">
     <!-- Favicon standard -->
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
@@ -16,6 +30,22 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Les Cadeaux de Nico",
+      "url": "https://lescadeauxdenico.fr",
+      "email": "lescadeauxdenico@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "9 place des galets du Rhône",
+        "postalCode": "07300",
+        "addressLocality": "Mauves",
+        "addressCountry": "FR"
+      }
+    }
+    </script>
 </head>
 <body>
     <!-- Header dynamique -->
@@ -28,6 +58,7 @@
                 <!-- Formulaire (gauche/large) -->
                 <div class="col-lg-8">
                     <div class="text-center mb-5">
+                        <h1 class="visually-hidden">Contact Les Cadeaux de Nico</h1>
                         <i class="fas fa-paper-plane fa-3x text-accent mb-3"></i>
                         <h2 class="fw-bold mb-3">Envoyez-nous un message</h2>
                         <p class="lead text-secondary mb-5">
@@ -130,7 +161,7 @@ L'équipe Les Cadeaux de Nico
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="privacy" required>
                                 <label class="form-check-label" for="privacy">
-                                    J'accepte le <a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal">traitement de mes données</a>
+                                    J'accepte le <button type="button" class="privacy-link" data-bs-toggle="modal" data-bs-target="#privacyModal">traitement de mes données</button>
                                     <span class="text-danger">*</span>
                                 </label>
                                 <div class="invalid-feedback">
@@ -196,6 +227,7 @@ L'équipe Les Cadeaux de Nico
                 </div>
                 <div class="section-white p-4">
                     <p>Vos données sont utilisées uniquement pour répondre à votre demande et ne sont pas conservées au-delà de 1 an.</p>
+                    <p class="mb-0">Détails complets: <a href="politique-confidentialite.html">Politique de confidentialité</a>.</p>
                 </div>
             </div>
         </div>
@@ -207,6 +239,8 @@ L'équipe Les Cadeaux de Nico
     <!-- Scripts JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
     <script src="assets/js/includeTemplates.js" defer></script>
+    <script src="assets/js/site-config.js" defer></script>
+    <script src="assets/js/analytics.js" defer></script>
     <script src="assets/js/main.js" defer></script>
     
     <script>
@@ -257,6 +291,14 @@ L'équipe Les Cadeaux de Nico
                         successMsg.classList.remove('d-none');
                         form.reset();
                         form.classList.remove('was-validated');
+                        const trackedSubject = formData.get('sujet') || '';
+                        if (typeof window.trackEvent === 'function') {
+                            window.trackEvent('generate_lead', {
+                                form_name: 'contact_form',
+                                lead_type: 'devis',
+                                subject: trackedSubject
+                            });
+                        }
                         
                         // Scroll vers le message de succès
                         successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -280,6 +322,35 @@ L'équipe Les Cadeaux de Nico
 
         // Attendre que la page soit complètement chargée
         document.addEventListener('DOMContentLoaded', function() {
+            const params = new URLSearchParams(window.location.search);
+            const productSlug = params.get('product');
+            const productTitle = params.get('title');
+            const subjectParam = params.get('subject');
+
+            if (subjectParam) {
+                const subjectSelect = document.getElementById('subject-select');
+                if (subjectSelect) {
+                    const wanted = subjectParam.toLowerCase();
+                    const matchingOption = Array.from(subjectSelect.options).find(opt =>
+                        opt.value.toLowerCase() === wanted ||
+                        opt.text.toLowerCase() === wanted
+                    );
+                    if (matchingOption) {
+                        subjectSelect.value = matchingOption.value;
+                    } else {
+                        subjectSelect.value = 'Demande de devis';
+                    }
+                }
+            }
+
+            if (productSlug || productTitle) {
+                const message = document.getElementById('message');
+                if (message && !message.value.trim()) {
+                    const productLabel = productTitle || productSlug;
+                    message.value = `Bonjour,\n\nJe souhaite un devis pour le produit: ${productLabel}.\nQuantité souhaitée:\nDélai souhaité:\nPersonnalisation souhaitée:\n\nMerci.`;
+                }
+            }
+
             // Adresse mail obfusquée (exemple avec code ASCII)
             const user = String.fromCharCode(108, 101, 115, 99, 97, 100, 101, 97, 117, 120, 100, 101, 110, 105, 99, 111);
             const domain = String.fromCharCode(103, 109, 97, 105, 108, 46, 99, 111, 109);

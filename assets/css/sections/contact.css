@@ -97,6 +97,16 @@
     text-decoration: underline;
 }
 
+.contact-form-band .privacy-link {
+    border: 0;
+    padding: 0;
+    background: none;
+    color: var(--accent-red-orange);
+    text-decoration: underline;
+    font: inherit;
+    cursor: pointer;
+}
+
 /* === VALIDATION VISUELLE === */
 .was-validated .form-control:invalid,
 .was-validated .form-select:invalid {

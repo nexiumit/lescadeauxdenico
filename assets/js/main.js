@@ -1,11 +1,48 @@
 const PRODUCTS_URL = 'data/products.json';
 const PRODUCTS_PER_PAGE = 8;
+let productsPromise = null;
 
 // Utils
 function createElementFromHTML(htmlString) {
     const div = document.createElement('div');
     div.innerHTML = htmlString.trim();
     return div.firstChild;
+}
+
+function sendAnalyticsEvent(eventName, params = {}) {
+  if (typeof window.trackEvent === 'function') {
+    window.trackEvent(eventName, params);
+  }
+}
+
+function toGaItem(product, index = 0) {
+  const priceValue = parseFloat(String(product.price || '').replace(',', '.').replace('€', '').trim()) || 0;
+  return {
+    item_id: product.slug,
+    item_name: product.title,
+    item_category: product.category,
+    price: priceValue,
+    index
+  };
+}
+
+function setProductSeoMeta(product) {
+  const slug = encodeURIComponent(product.slug);
+  const imageBase = product.images?.[0] ? getBaseName(product.images[0]) : '';
+  const imageUrl = imageBase
+    ? `https://lescadeauxdenico.fr/assets/img/products/webp/large/${imageBase}.webp`
+    : 'https://lescadeauxdenico.fr/assets/img/logo.webp';
+
+  document.title = `${product.title} - Les Cadeaux de Nico`;
+  document.querySelector('meta[name="description"]')?.setAttribute('content', product.shortDescription);
+  document.querySelector('meta[property="og:title"]')?.setAttribute('content', `${product.title} - Les Cadeaux de Nico`);
+  document.querySelector('meta[property="og:description"]')?.setAttribute('content', product.shortDescription);
+  document.querySelector('meta[property="og:url"]')?.setAttribute('content', `https://lescadeauxdenico.fr/product.html?slug=${slug}`);
+  document.querySelector('meta[property="og:image"]')?.setAttribute('content', imageUrl);
+  document.querySelector('meta[name="twitter:title"]')?.setAttribute('content', `${product.title} - Les Cadeaux de Nico`);
+  document.querySelector('meta[name="twitter:description"]')?.setAttribute('content', product.shortDescription);
+  document.querySelector('meta[name="twitter:image"]')?.setAttribute('content', imageUrl);
+  document.querySelector('link[rel="canonical"]')?.setAttribute('href', `https://lescadeauxdenico.fr/product.html?slug=${slug}`);
 }
 
 // Retourne le nom du fichier sans extension ni dossier
@@ -16,6 +53,9 @@ function getBaseName(path) {
 
 // Fetch products
 async function fetchProducts() {
+  if (productsPromise) return productsPromise;
+
+  productsPromise = (async () => {
   try {
     const res = await fetch(PRODUCTS_URL);
     if (!res.ok) throw new Error('Impossible de charger les produits.');
@@ -31,6 +71,9 @@ async function fetchProducts() {
     });
     return [];
   }
+  })();
+
+  return productsPromise;
 }
 
 // Fonction SIMPLIFIÉE pour event listeners cards
@@ -38,24 +81,42 @@ function attachCardClickListeners() {
     const productCards = document.querySelectorAll('.card[data-product-slug]');
     
     productCards.forEach(card => {
-        const newCard = card.cloneNode(true);
-        card.parentNode.replaceChild(newCard, card);
-        
-        newCard.addEventListener('click', function(e) {
+        if (card.dataset.listenersAttached === 'true') return;
+        card.dataset.listenersAttached = 'true';
+        card.style.cursor = 'pointer';
+
+        card.addEventListener('click', function(e) {
             if (e.target.closest('a') || e.target.closest('.btn')) return;
             const slug = this.dataset.productSlug;
-            if (slug) window.location.href = `product.html?slug=${slug}`;
+            if (slug) {
+              sendAnalyticsEvent('select_item', {
+                item_list_name: document.getElementById('home-products') ? 'home_bestsellers' : 'catalog',
+                items: [{ item_id: slug }]
+              });
+              window.location.href = `product.html?slug=${slug}`;
+            }
+        });
+
+        card.querySelectorAll('a[href*="product.html?slug="]').forEach(link => {
+            link.addEventListener('click', () => {
+                const slug = card.dataset.productSlug;
+                if (!slug) return;
+                sendAnalyticsEvent('select_item', {
+                    item_list_name: document.getElementById('home-products') ? 'home_bestsellers' : 'catalog',
+                    items: [{ item_id: slug }]
+                });
+            });
         });
         
-        newCard.addEventListener('mousedown', function() {
+        card.addEventListener('mousedown', function() {
             this.style.transform = 'scale(0.98)';
             this.style.transition = 'transform 0.1s ease';
         });
-        newCard.addEventListener('mouseup', function() {
+        card.addEventListener('mouseup', function() {
             this.style.transform = '';
             setTimeout(() => { this.style.transition = 'box-shadow 0.3s ease'; }, 100);
         });
-        newCard.addEventListener('mouseleave', function() { this.style.transform = ''; });
+        card.addEventListener('mouseleave', function() { this.style.transform = ''; });
     });
 }
 
@@ -84,7 +145,7 @@ async function renderCatalogue() {
         const start = (currentPage - 1) * PRODUCTS_PER_PAGE;
         const pageItems = filteredProducts.slice(start, start + PRODUCTS_PER_PAGE);
 
-        container.innerHTML = pageItems.map(p => `
+        container.innerHTML = pageItems.map((p, i) => `
             <div class="col">
                 <div class="card h-100 shadow-sm" data-product-slug="${p.slug}">
                     <div class="card-img-wrapper">
@@ -98,7 +159,11 @@ async function renderCatalogue() {
                             sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
                             class="card-img-top"
                             alt="${p.title}"
-                            loading="lazy"
+                            width="600"
+                            height="600"
+                            decoding="async"
+                            loading="${i < 2 ? 'eager' : 'lazy'}"
+                            fetchpriority="${i < 2 ? 'high' : 'auto'}"
                         >
                     </div>
                     ${p.isNew ? '<span class="badge badge-new">Nouveau</span>' : ''}
@@ -142,6 +207,11 @@ async function renderCatalogue() {
         });
 
         attachCardClickListeners();
+        const activeCategory = filterContainer.querySelector('.filter-btn.active')?.dataset.category || 'all';
+        sendAnalyticsEvent('view_item_list', {
+            item_list_name: `catalog_${activeCategory}`,
+            items: pageItems.map((item, index) => toGaItem(item, index))
+        });
     }
 
     filterContainer.querySelectorAll('.filter-btn').forEach(btn => {
@@ -181,6 +251,7 @@ async function renderProduct() {
         container.innerHTML = '<p class="text-center">Produit introuvable.</p>';
         return;
     }
+    setProductSeoMeta(product);
 
     container.innerHTML = `
         <div class="row g-4">
@@ -189,12 +260,18 @@ async function renderProduct() {
                     <div class="carousel-inner">
                     ${product.images.map((img, i) => `
                         <div class="carousel-item ${i===0?'active':''}">
-                        <img
-                            src="assets/img/products/webp/medium/${getBaseName(img)}.webp"
-                            class="product-carousel-img"
-                            alt="${product.title} - Image ${i+1}"
-                            loading="lazy"
-                        >
+                        <div class="carousel-media">
+                            <img
+                                src="assets/img/products/webp/medium/${getBaseName(img)}.webp"
+                                class="product-carousel-img"
+                                alt="${product.title} - Image ${i+1}"
+                                width="900"
+                                height="900"
+                                decoding="async"
+                                loading="${i === 0 ? 'eager' : 'lazy'}"
+                                fetchpriority="${i === 0 ? 'high' : 'auto'}"
+                            >
+                        </div>
                         </div>
                     `).join('')}
                     </div>
@@ -223,7 +300,7 @@ async function renderProduct() {
             </div>
 
             <div class="col-md-6">
-                <h2>${product.title}</h2>
+                <h1 class="h2">${product.title}</h1>
                 <p>${product.description}</p>
                 <ul>
                     <li><strong>Matériaux :</strong> ${product.materials.join(', ')}</li>
@@ -232,12 +309,40 @@ async function renderProduct() {
                 </ul>
                 <p class="price text-accent fw-bold fs-3">${product.price}</p>
                 <p>Tarif dégressif en fonction des quantités commandées</p>
-                <a href="contact.html" class="btn btn-primary btn-lg w-100">
-                <i class="fas fa-paper-plane me-2"></i> Nous contacter pour personnaliser
+                <a href="contact.html?subject=Demande%20de%20devis&product=${encodeURIComponent(product.slug)}&title=${encodeURIComponent(product.title)}" class="btn btn-primary btn-lg w-100" data-track-contact="product" data-product-slug="${product.slug}" data-product-title="${product.title}">
+                <i class="fas fa-paper-plane me-2"></i> Demander un devis pour ce produit
                 </a>
             </div>
         </div>
     `;
+
+    const existingLd = document.getElementById('product-jsonld');
+    if (existingLd) existingLd.remove();
+    const ld = document.createElement('script');
+    ld.id = 'product-jsonld';
+    ld.type = 'application/ld+json';
+    const priceValue = parseFloat(String(product.price).replace(',', '.').replace('€', '').trim()) || 0;
+    ld.textContent = JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Product',
+        name: product.title,
+        description: product.shortDescription,
+        image: product.images.map(img => `https://lescadeauxdenico.fr/assets/img/products/webp/large/${getBaseName(img)}.webp`),
+        brand: { '@type': 'Brand', name: 'Les Cadeaux de Nico' },
+        offers: {
+            '@type': 'Offer',
+            priceCurrency: 'EUR',
+            price: priceValue.toFixed(2),
+            availability: 'https://schema.org/InStock',
+            url: `https://lescadeauxdenico.fr/product.html?slug=${encodeURIComponent(product.slug)}`
+        }
+    });
+    document.head.appendChild(ld);
+    sendAnalyticsEvent('view_item', {
+        currency: 'EUR',
+        value: priceValue,
+        items: [toGaItem(product, 0)]
+    });
 
     // Initialiser le carousel Bootstrap
     const carouselEl = document.getElementById(`carousel-${product.slug}`);
@@ -250,18 +355,35 @@ async function renderProduct() {
     const thumbnails = container.querySelectorAll('.thumbnail');
     const scrollAmount = 80; // largeur approx d'une miniature + gap
 
+    function centerThumbnail(thumb) {
+        const wrapperWidth = thumbnailsWrapper.offsetWidth;
+        const thumbWidth = thumb.offsetWidth;
+        const scrollLeft = thumb.offsetLeft - (wrapperWidth / 2) + (thumbWidth / 2);
+        thumbnailsWrapper.scrollTo({ left: scrollLeft, behavior: 'smooth' });
+    }
+
+    function getActiveIndex() {
+        const items = Array.from(container.querySelectorAll('.carousel-item'));
+        const activeItem = container.querySelector('.carousel-item.active');
+        const idx = items.indexOf(activeItem);
+        return idx >= 0 ? idx : 0;
+    }
+
+    function syncActiveThumbnail(index) {
+        const activeThumb = thumbnails[index];
+        if (!activeThumb) return;
+        thumbnails.forEach(t => t.classList.remove('active'));
+        activeThumb.classList.add('active');
+        centerThumbnail(activeThumb);
+    }
+
     thumbnails.forEach(thumb => {
         thumb.addEventListener('click', () => {
             thumbnails.forEach(t => t.classList.remove('active'));
             thumb.classList.add('active');
             const index = parseInt(thumb.dataset.bsSlideTo, 10);
             carouselInstance.to(index);
-
-            // Centrer la miniature active dans le bandeau
-            const wrapperWidth = thumbnailsWrapper.offsetWidth;
-            const thumbWidth = thumb.offsetWidth;
-            const scrollLeft = thumb.offsetLeft - (wrapperWidth / 2) + (thumbWidth / 2);
-            thumbnailsWrapper.scrollTo({ left: scrollLeft, behavior: 'smooth' });
+            centerThumbnail(thumb);
         });
         thumb.addEventListener('keydown', (e) => {
             if (e.key === 'Enter' || e.key === ' ') {
@@ -278,6 +400,17 @@ async function renderProduct() {
     thumbNext.addEventListener('click', () => {
         thumbnailsWrapper.scrollBy({ left: scrollAmount*3, behavior: 'smooth' });
     });
+
+    carouselEl.addEventListener('slide.bs.carousel', (event) => {
+        const nextIndex = typeof event.to === 'number' ? event.to : getActiveIndex();
+        syncActiveThumbnail(nextIndex);
+    });
+
+    carouselEl.addEventListener('slid.bs.carousel', () => {
+        syncActiveThumbnail(getActiveIndex());
+    });
+
+    syncActiveThumbnail(getActiveIndex());
 }
 
 
@@ -294,7 +427,7 @@ async function renderHome() {
     
     const bestsellers = products.filter(p => p.isBestseller).slice(0, 6) || products.slice(0, 6);
     
-    container.innerHTML = bestsellers.map(p => `
+    container.innerHTML = bestsellers.map((p, i) => `
         <div class="col-lg-4 col-md-6">
             <div class="card h-100" data-product-slug="${p.slug}">
                 <div class="card-img-wrapper">
@@ -308,7 +441,11 @@ async function renderHome() {
                         sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         class="card-img-top"
                         alt="${p.title}"
-                        loading="lazy"
+                        width="600"
+                        height="600"
+                        decoding="async"
+                        loading="${i < 2 ? 'eager' : 'lazy'}"
+                        fetchpriority="${i < 2 ? 'high' : 'auto'}"
                     >
                 </div>
                 ${p.isNew ? '<span class="badge badge-new">Nouveau</span>' : ''}
@@ -316,6 +453,7 @@ async function renderHome() {
                     <h5 class="card-title">${p.title}</h5>
                     <div class="mt-auto">
                         <div class="price text-accent fw-bold">${p.price}</div>
+                        <a href="product.html?slug=${p.slug}" class="btn btn-primary mt-2">Voir le produit</a>
                     </div>
                 </div>
             </div>
@@ -325,6 +463,10 @@ async function renderHome() {
     setTimeout(() => {
         attachCardClickListeners();
     }, 100);
+    sendAnalyticsEvent('view_item_list', {
+        item_list_name: 'home_bestsellers',
+        items: bestsellers.map((item, index) => toGaItem(item, index))
+    });
 }
 
 // Init
@@ -344,5 +486,15 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             backToTop?.classList.remove('show');
         }
+    });
+
+    document.body.addEventListener('click', (event) => {
+        const contactLink = event.target.closest('a[data-track-contact], a[href^="contact.html"]');
+        if (!contactLink) return;
+        sendAnalyticsEvent('contact_click', {
+            source: contactLink.dataset.trackContact || 'generic',
+            product_slug: contactLink.dataset.productSlug || '',
+            product_title: contactLink.dataset.productTitle || ''
+        });
     });
 });

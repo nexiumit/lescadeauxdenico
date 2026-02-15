@@ -10,9 +10,24 @@ async function includeTemplate(id, filePath) {
   }
 }
 
+function highlightActiveNavLink() {
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  const links = document.querySelectorAll('#navbarNav .nav-link');
+  links.forEach(link => {
+    const href = link.getAttribute('href');
+    const isActive = href === currentPage || (currentPage === '' && href === 'index.html');
+    link.classList.toggle('active', isActive);
+    if (isActive) {
+      link.setAttribute('aria-current', 'page');
+    } else {
+      link.removeAttribute('aria-current');
+    }
+  });
+}
+
 // Appel sur DOMContentLoaded
 document.addEventListener('DOMContentLoaded', () => {
   // Inclure header et footer
-  includeTemplate('header-container', 'assets/templates/header.html');
+  includeTemplate('header-container', 'assets/templates/header.html').then(highlightActiveNavLink);
   includeTemplate('footer-container', 'assets/templates/footer.html');
 });
